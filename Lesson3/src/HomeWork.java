@@ -10,7 +10,7 @@ public class HomeWork {
         for (int i = 0; i < lenght; i++) {
             mass[i] = scanner.nextInt();
         }
-        System.out.print("Введите значения массива: ");
+        System.out.print("Вывод значений массива: ");
         for (int i = 0; i < lenght; i++) {
             System.out.print("" + mass[i]);
         }

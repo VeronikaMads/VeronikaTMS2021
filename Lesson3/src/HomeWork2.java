@@ -7,11 +7,9 @@ public class HomeWork2 {
         int numder = scanner.nextInt();
         if (numder > 0) {
             ++numder;
-        }
-        if (numder < 0) {
+        } else if (0 > numder) {
             numder = numder - 2;
-        }
-        if (numder == 0) {
+        } else if (numder == 0) {
             numder = 10;
         }
         System.out.println("Результат : " + numder);
