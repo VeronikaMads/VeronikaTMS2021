@@ -7,8 +7,8 @@ public class HomeWork6 {
         int a = scanner.nextInt();
         System.out.print("Введите значение катета b: ");
         int b = scanner.nextInt();
-        int result = ((a * a) + (b * b));
-        System.out.println("Гипотинуза равна: " + result);
+        double result = (Math.sqrt(Math.pow(a,2)+Math.pow(b,2)));
+        System.out.println("Гипотенуза равна: " + result);
     }
 
 }
