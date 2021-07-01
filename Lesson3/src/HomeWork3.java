@@ -13,8 +13,8 @@ public class HomeWork3 {
 //        foobar(6);
 //        foobar(10);
 //        foobar(15);
-        calculateSumOfDiagonalElements();
-//        printMatrix();
+//        calculateSumOfDiagonalElements();
+        printMatrix();
     }
 
 //    На вход приходит массив целых чисел типа int
@@ -106,26 +106,26 @@ public class HomeWork3 {
     /**
      * заполнить рандомно 2-х мерный массив и посчитать сумму элементов на диагонали
      */
-    public static void calculateSumOfDiagonalElements() {
-        int[][] mass = new int[4][4];
-        Random random = new Random();
-        for (int i = 0; i < mass.length; i++) {
-            for (int j = 0; j < mass[i].length; j++) {
-                mass[i][j] = random.nextInt(60);
-            }
-        }
-        int sum = 0;
-        for (int i = 0; i < mass.length; i++) {
-            for (int j = 0; j < mass[i].length; j++) {
-                System.out.printf("%5d", mass[i][j]);
-                if (i == j) {
-                    sum += mass[i][j];
-                }
-            }
-            System.out.println();
-        }
-        System.out.println("Сумма по диагонали " + sum);
-    }
+//    public static void calculateSumOfDiagonalElements() {
+//        int[][] mass = new int[4][4];
+//        Random random = new Random();
+//        for (int i = 0; i < mass.length; i++) {
+//            for (int j = 0; j < mass[i].length; j++) {
+//                mass[i][j] = random.nextInt(60);
+//            }
+//        }
+//        int sum = 0;
+//        for (int i = 0; i < mass.length; i++) {
+//            for (int j = 0; j < mass[i].length; j++) {
+//                System.out.printf("%5d", mass[i][j]);
+//                if (i == j) {
+//                    sum += mass[i][j];
+//                }
+//            }
+//            System.out.println();
+//        }
+//        System.out.println("Сумма по диагонали " + sum);
+//    }
 
 
 
@@ -152,35 +152,36 @@ public class HomeWork3 {
      * <p>
      * Обратите внимание, что 21% 3 == 0 и 21% 7 = 0, но выводить надо не +-, а +
      */
-//    public static void printMatrix() {
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Введите значение a: ");
-//        int a = scanner.nextInt();
-//        System.out.println("Введите значение b: ");
-//        int b = scanner.nextInt();
-//        int mass[][] = new int[a][b];
-//        Random random = new Random();
-//        for (int i = 0; i < mass.length; i++) {
-//            for (int j = 0; j < mass[i].length; j++) {
-//                mass[i][j] = random.nextInt(100);
-//                System.out.printf("%5d", mass[i][j]);
-//            }
-//            System.out.println();
-//        }
-//        for (int[] ints : mass) {
-//            for (int anInt : ints) {
-//                if (anInt % 3 == 0) {
-//                    System.out.print("+");
-//                } else if (anInt % 7 == 0) {
-//                    System.out.print("-");
-//                } else {
-//                    System.out.print("*");
-//                }
-//            }
-//        }
-//        System.out.println();
-//
-//    }
+    public static void printMatrix() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите значение a: ");
+        int a = scanner.nextInt();
+        System.out.println("Введите значение b: ");
+        int b = scanner.nextInt();
+        int mass[][] = new int[a][b];
+        Random random = new Random();
+        for (int i = 0; i < mass.length; i++) {
+            for (int j = 0; j < mass[i].length; j++) {
+                mass[i][j] = random.nextInt(100);
+                System.out.printf("%5d", mass[i][j]);
+            }
+            System.out.println();
+        }
+        for (int[] ints : mass) {
+            for (int anInt : ints) {
+                if (anInt % 3 == 0) {
+                    System.out.print(" + ");
+                } else if (anInt % 7 == 0) {
+                    System.out.print(" - ");
+                } else {
+                    System.out.print(" * ");
+                }
+            }
+            System.out.println();
+        }
+
+    }
+
 }
 
 
