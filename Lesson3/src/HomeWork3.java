@@ -14,7 +14,9 @@ public class HomeWork3 {
 //        foobar(10);
 //        foobar(15);
 //        calculateSumOfDiagonalElements();
-        printMatrix();
+//        printMatrix();
+        printPrimeNumbers();
+
     }
 
 //    На вход приходит массив целых чисел типа int
@@ -152,37 +154,51 @@ public class HomeWork3 {
      * <p>
      * Обратите внимание, что 21% 3 == 0 и 21% 7 = 0, но выводить надо не +-, а +
      */
-    public static void printMatrix() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите значение a: ");
-        int a = scanner.nextInt();
-        System.out.println("Введите значение b: ");
-        int b = scanner.nextInt();
-        int mass[][] = new int[a][b];
-        Random random = new Random();
-        for (int i = 0; i < mass.length; i++) {
-            for (int j = 0; j < mass[i].length; j++) {
-                mass[i][j] = random.nextInt(100);
-                System.out.printf("%5d", mass[i][j]);
+//    public static void printMatrix() {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Введите значение a: ");
+//        int a = scanner.nextInt();
+//        System.out.println("Введите значение b: ");
+//        int b = scanner.nextInt();
+//        int mass[][] = new int[a][b];
+//        Random random = new Random();
+//        for (int i = 0; i < mass.length; i++) {
+//            for (int j = 0; j < mass[i].length; j++) {
+//                mass[i][j] = random.nextInt(100);
+//                System.out.printf("%5d", mass[i][j]);
+//            }
+//            System.out.println();
+//        }
+//        for (int[] ints : mass) {
+//            for (int anInt : ints) {
+//                if (anInt % 3 == 0) {
+//                    System.out.print(" + ");
+//                } else if (anInt % 7 == 0) {
+//                    System.out.print(" - ");
+//                } else {
+//                    System.out.print(" * ");
+//                }
+//            }
+//            System.out.println();
+//        }
+//  Задача со звездочкой!
+//  Метод должен печатать все простые числа <1000
+//  что такое просто число (https://www.webmath.ru/poleznoe/formules_18_5.php)
+
+    public static void printPrimeNumbers() {
+        boolean a = true;
+        boolean b = false;
+        for (int i = 2; i <= 1000; i++) {
+            if (1000 % i == 0) { break;
             }
-            System.out.println();
-        }
-        for (int[] ints : mass) {
-            for (int anInt : ints) {
-                if (anInt % 3 == 0) {
-                    System.out.print(" + ");
-                } else if (anInt % 7 == 0) {
-                    System.out.print(" - ");
-                } else {
-                    System.out.print(" * ");
-                }
-            }
-            System.out.println();
+            System.out.println(i);
         }
 
+        }
     }
 
-}
+
+
 
 
 
