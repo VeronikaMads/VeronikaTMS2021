@@ -15,7 +15,7 @@ public class HomeWork3 {
 //        foobar(15);
 //        calculateSumOfDiagonalElements();
 //        printMatrix();
-        printPrimeNumbers();
+//        printPrimeNumbers();
 
     }
 
@@ -185,17 +185,17 @@ public class HomeWork3 {
 //  Метод должен печатать все простые числа <1000
 //  что такое просто число (https://www.webmath.ru/poleznoe/formules_18_5.php)
 
-    public static void printPrimeNumbers() {
-        boolean a = true;
-        boolean b = false;
-        for (int i = 2; i <= 1000; i++) {
-            if (1000 % i == 0) { break;
-            }
-            System.out.println(i);
-        }
-
-        }
-    }
+//    public static void printPrimeNumbers() {
+//        boolean a = true;
+//        boolean b = false;
+//        for (int i = 2; i <= 1000; i++) {
+//            if (1000 % i == 0) { break;
+//            }
+//            System.out.println(i);
+//        }
+//
+//        }
+//    }
 
 
 
