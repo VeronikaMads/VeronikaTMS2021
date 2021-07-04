@@ -96,18 +96,25 @@ public class HomeWork {
 //        Определите какой элемент является в этом массиве максимальным и сообщите индекс его последнего вхождения в массив.
 //        Пример: {3,4,5,62,7,8,4,-5,7,62,5,1} Максимальный элемент 62, индекс его последнего вхождения в массив = 10
 
-    public static void Array1(){
+    public static void Array1() {
         int[] mass = new int[12];
         Random random = new Random();
         for (int i = 0; i < mass.length; i++) {
             mass[i] = random.nextInt(15);
-            System.out.printf("%5d",mass[i]);
-
+            System.out.printf("%5d", mass[i]);
+        }
+        int max = 0;
+        for (int i = 0; i < mass.length; i++) {
+            if(mass[i]>max){
+                max =  mass[i];
+            }
+            
         }
 
+        }
     }
 
-}
+
 
 
 
