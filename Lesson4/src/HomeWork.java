@@ -4,7 +4,7 @@ import java.util.*;
 public class HomeWork {
     public static void main(String[] args) {
         kolichectvoAmeb(1);
-        summa(3,4);
+        summa(3, 4);
         ImageInputStreamSpi();
         printMatrix();
         ArraySort();
@@ -84,7 +84,7 @@ public class HomeWork {
 //            System.out.println(Arrays.toString());
         }
         System.out.println(" ");
-        for (int i = mass.length-1; i >=0 ; i--) {
+        for (int i = mass.length - 1; i >= 0; i--) {
             System.out.printf("%5d", i);
 
         }
@@ -100,9 +100,8 @@ public class HomeWork {
         for (int i = 0; i < mass.length; i++) {
             mass[i] = random.nextInt(15);
             System.out.printf("%5d", mass[i]);
-//            int max = 0;
             int maxIndex = 0;
-            if (mass[i] > mass[maxIndex]){
+            if (mass[i] > mass[maxIndex]) {
                 maxIndex = i;
             }
             System.out.printf("%5d", maxIndex);
