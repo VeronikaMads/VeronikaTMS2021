@@ -13,7 +13,9 @@ public class HomeWork4 {
 //        ArraySort();
 //        Array1();
 //        Array2();
-        Array3();
+//        Array3();
+//        Arrays4();
+        Arrays5();
 
     }
     //  1) Одноклеточная амеба каждые 3 часа делится на 2 клетки. Определить,
@@ -169,20 +171,76 @@ public class HomeWork4 {
 
 //        8) Найти максимальный элемент в массиве {4,5,0,23,77,0,8,9,101,2} и поменять его местами с нулевым элементом
 
-    public static void Array3(){
-        int MAX = Integer.MAX_VALUE;
-        int [] mass3 = {4,5,0,23,77,0,8,9,101,2};
-        for (int i = 0; i < mass3.length ; i++) {
-           if (i >= MAX){
-               i = MAX;
-               System.out.println(MAX);
-           }
-        }
+//    public static void Array3() {
+//        int[] mass3 = {4, 5, 0, 23, 77, 0, 8, 9, 101, 2};
+//        int MAX = Integer.MIN_VALUE;
+//        int indexMAX = -1;
+//        for (int i = 0; i < mass3.length; i++) {
+//            if (mass3[i] > MAX) {
+//                MAX = mass3[i];
+//                indexMAX = i;
+//                System.out.println(" " + MAX);
+//            }
+//        }
+//    }
 
 
+
+//        9) Проверить, различны ли все элементы массива, если не различны то вывести элемент повторяющийся
+//        Пример: {0,3,46,3,2,1,2}
+//        Массив имеет повторяющиеся элементы 3, 2
+//        Пример: {0,34,46,31,20,1,28}
+//        Массив не имеет повторяющихся элементов
+
+//    public static void Arrays4(){
+//
+//    }
+
+
+//        10) Создаём квадратную матрицу, размер вводим с клавиатуры.
+//        Заполняем случайными числами в диапазоне от 0 до 50. И выводим на консоль(в виде матрицы).
+//        Далее необходимо транспонировать матрицу(1 столбец станет 1-й строкой, 2-й столбец - 2-й строкой и т. д.)
+//        Пример:
+//          1 2 3 4      1 6 3 1
+//          6 7 8 9      2 7 3 5
+//          3 3 4 5      3 8 4 6
+//          1 5 6 7      4 9 5 7
+
+    public static void Arrays5() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите количество строк : ");
+        int a = scanner.nextInt();
+        System.out.println("Введите количество столбцов : ");
+        int b = scanner.nextInt();
+        int[][] mass5 = new int[a][b];
+        Random random = new Random();
+        for (int i = 0; i < mass5.length; i++) {
+            for (int j = 0; j < mass5.length; j++) {
+                mass5[i][j] = random.nextInt(51);
+                System.out.print(mass5[i][j] + "  ");
+            }
+            System.out.println("\n");
         }
+        int transpmass [][] = new int[a][b];
+        for (int i = 0; i < mass5.length; i++) {
+            for (int j = 0; j < mass5.length; j++) {
+                transpmass [i][j] = mass5[i][j];
+                mass5[j][i] = transpmass[j][i];
+                System.out.print(transpmass[j][i]+ "  ");
+            }
+            System.out.println("\n");
+        }
+
     }
+
 }
+
+
+
+
+
+
+
 
 
 
