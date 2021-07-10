@@ -2,19 +2,26 @@ package homeWork6;
 
 import homeWork6.Address;
 public class Person {
-    public static final String MALE = "male";
-    public static final String FEMALE = "female";
-//    public static final String MM = "Constanta";
+    public static final String MALE = "male";  // обьявляем константы
+    public static final String FEMALE = "female"; // -//-
+    public Object Address;
+    Address address;
     String name;
     int age;
-    private Address address;
-    private String sex;
+    String sex = FEMALE;
 
     public Person(String name, String city, String sex, int age, Address address) {
         this.name = name;
         this.address = address;
-        this.sex = sex;
         this.age = age;
+        this.sex = sex;
+        if (MALE.equals(sex) || FEMALE.equals(sex)){
+            this.sex = sex;
+        }
+    }
+
+    public Person() {
+
     }
 
     @Override
