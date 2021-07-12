@@ -4,15 +4,14 @@ import homeWork6.Address;
 public class Person {
     public static final String MALE = "male";  // обьявляем константы
     public static final String FEMALE = "female"; // -//-
-    public Object Address;
-    Address address;
-    String name;
-    int age;
-    String sex = FEMALE;
+    private Address myAddress;
+    private String name;
+    private int age;
+    private String sex = FEMALE;
 
-    public Person(String name, String city, String sex, int age, Address address) {
+    public Person(String name, String sex, int age, Address address) {
         this.name = name;
-        this.address = address;
+        this.myAddress = address;
         this.age = age;
         this.sex = sex;
         if (MALE.equals(sex) || FEMALE.equals(sex)){
@@ -20,19 +19,20 @@ public class Person {
         }
     }
 
-    public Person() {
-
+    public Person(String s, String s1) {
     }
+
 
     @Override
     public String toString() {
         return "Person{" +
-                "name='" + name + '\'' +
+                "Address=" + myAddress +
+                ", name='" + name + '\'' +
                 ", age=" + age +
-                ", address=" + address +
                 ", sex='" + sex + '\'' +
                 '}';
     }
 }
+
 
 
