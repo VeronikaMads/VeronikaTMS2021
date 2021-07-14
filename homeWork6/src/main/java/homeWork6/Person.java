@@ -1,6 +1,7 @@
 package homeWork6;
 
 import homeWork6.Address;
+
 public class Person {
     public static final String MALE = "male";  // обьявляем константы
     public static final String FEMALE = "female"; // -//-
@@ -18,8 +19,26 @@ public class Person {
             this.sex = sex;
         }
     }
+//
+//    public Person(String nameCityzens, int ageCityzens, String sexCityzens, Address addressCityzens) {
+//        this.name = nameCityzens;
+//        this.age = ageCityzens;
+//        this.sex = sexCityzens;
+//        this.address = addressCityzens;
 
     public Person(String s, String s1) {
+    }
+
+    public static String getName() {
+        return getName();
+    }
+
+    public static int getAge() {
+        return 0;
+    }
+
+    public static String getSex() {
+        return FEMALE;
     }
 
 
@@ -32,7 +51,13 @@ public class Person {
                 ", sex='" + sex + '\'' +
                 '}';
     }
+
+    public Address getAddress() {
+
 }
+}
+
+
 
 
 
