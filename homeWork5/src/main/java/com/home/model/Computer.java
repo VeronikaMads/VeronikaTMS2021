@@ -1,53 +1,83 @@
 package com.home.model;
 //создаем конструктор
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Random;
 import java.util.Scanner;
 
+@Getter
+@Setter
 public class Computer {
-    public String processor; //процессор
-    public String ddr;  //оперативная память
-    public int ssd;  // жесткий диск
-    public int recurs;  // ресурс полных циклов работы (вкл/выкл)
+    private final String processor; //процессор
+    private final int ddr;  //оперативная память
+    private final int ssd;  // жесткий диск
+    private final int recursOfCycles;  // ресурс полных циклов работы (вкл/выкл)
+
+    private int cycles = 0; // цикл перезапуска
+    private boolean burn = false; // сгорел ли комьпютер?
+    private boolean isOn = false; // включен ли компьютер ?
+    Scanner scanner = new Scanner(System.in); // запускаем сканер
+
+    public Computer(String processor, int ddr, int ssd, int recursOfCycles) {
+        this.processor = processor;
+        this.ddr = ddr;
+        this.ssd = ssd;
+        this.recursOfCycles = recursOfCycles;
+    }
 
     // добавляем метод описание(вывод всех полей)
     public void info() {
-        System.out.printf("Computer: processor - %s , ddr - %s , ssd - %d , recurs - %d \n", processor, ddr, ssd, recurs);
+        System.out.printf("Computer: processor - %s , ddr - %s , ssd - %d , recursOfCycles - %d \n", processor, ddr, ssd, recursOfCycles);
     }
 
-    //добавляем метод метод включить (on/off)void on () {
+    //добавляем метод метод включить (on) {
     public void on() {
-        System.out.println(" Внимание ! Введите число от 0 до 1 ");
-        Scanner scanner = new Scanner(System.in);
-        int number = scanner.nextInt();
-        Random random = new Random();
-        int code = random.nextInt(2);
-        if (number == code) {
-//            System.out.println("Компьютер выключается ");// если введенное вами число совпадет с рандомным, то компьютер выключается, вызывается метод off().
-            off();
-        } else {  //если введенное вами число не совпадет с рандомным, то компьютер сгорает.
-            burn();
+        if (!burn) { // проверяем не сожжен ли компьютер, если нет то..
+            System.out.println(" Включение.."); // компьютер включается
+            System.out.println(" Внимание ! Введите число от 0 до 1 ");
+            Random random = new Random(); // создаем рандом
+            int number = scanner.nextInt();
+            int code = random.nextInt(2);
+            if (number == code) { // проверяем введеные данные с полученным рандомом,если введенное вами число совпадет с рандомным
+                System.out.println("Компьютер включен ");// то компьютер включается, вызывается метод off().
+                off();
+            } else {  //если введенное вами число не совпадет с рандомным, то компьютер сгорает.
+                burn = true;
+            }
+            isOn = true;{
+                System.out.println("Компьютер сгорел");
+            }
         }
     }
 
-    // добавляем метод burn , компьтер сгорел.
-    public void burn() {
- //       if (recurs = 0) {
-            System.out.println("Компьютер сгорел");
-        }
-    }
 
-    //  добавляем метод выключить (of())
-    public void off() {
-        if (recurs > 0) {
-            recurs--;
-            System.out.println("Компьютер выключается");
-        } else { // если меньше 0 - сгорел
-            burn();
+//          добавляем метод выключить (of())
+        public void off () {
+            if (!burn) { //проверяем не сожжен ли компьютер, если нет то..
+                System.out.println("Выключение...");
+                System.out.println(" Внимание ! Введите число от 0 до 1 ");
+                Random random = new Random(); // создаем рандом
+                int number = scanner.nextInt();
+                int code = random.nextInt(2);
+                if (number == code) //проверяем введеные данные с полученным рандомом,если введенное вами число совпадет с рандомным то
+                System.out.println(" Компьютер выключен");
+                if (isOn){ // Проверяем включен ли был компьютер
+                    cycles++; // если да то увеличиваем счетччик количества включения-выключения
+                    isOn = false;
+                    if (cycles == recursOfCycles){
+                        burn = true;
+                    } else {
+                        System.out.println(" Компьютер сгорел");
+                    }
+                }// Проверяем включен ли был для этого компьютер
+            }
         }
-    }
 
 }
+
+
 
 
 
