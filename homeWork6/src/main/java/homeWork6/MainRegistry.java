@@ -1,7 +1,7 @@
 package homeWork6;
-public class mainRegistry {
+public class MainRegistry {
     public static void main(String[] args) {
-        // создаем список людей и передаем их в PersonRegistry
+//         создаем список людей и передаем их в PersonRegistry
         Address person1Address = new Address("Минск", "Беларусь");
         Person person1 = new Person(" Паша", "MALE", 15, person1Address);
 
@@ -31,9 +31,11 @@ public class mainRegistry {
 
         PersonRegistry registry = new PersonRegistry(new Person[]{person1,person2,person3,person4,person5,person6,person7,person8,person9});
         System.out.println("Колличество людей проживающих в Минске: " + registry.countPeopleAddress(new Address("Минск", "Беларусь")));
-        System.out.println("Колличество людей в возрасте от 25 до 27: " + registry.countPeopleAge());
+        System.out.println("Колличество людей в возрасте от 25 до 27: " + registry.countPeopleAge(5));
         System.out.println("Колличество людей с имененм : " + registry.countPeopleName("Максим"));
+
+        }
     }
 
-}
+
 

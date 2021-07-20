@@ -1,6 +1,13 @@
 package homeWork6;
 
 import homeWork6.Address;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 
 public class Person {
     public static final String MALE = "male";  // обьявляем константы
@@ -19,6 +26,12 @@ public class Person {
             this.sex = sex;
         }
     }
+
+    public Address getAddress() {
+        return myAddress;
+    }
+
+
 //
 //    public Person(String nameCityzens, int ageCityzens, String sexCityzens, Address addressCityzens) {
 //        this.name = nameCityzens;
@@ -26,35 +39,8 @@ public class Person {
 //        this.sex = sexCityzens;
 //        this.address = addressCityzens;
 
-    public Person(String s, String s1) {
-    }
-
-    public static String getName() {
-        return getName();
-    }
-
-    public static int getAge() {
-        return 0;
-    }
-
-    public static String getSex() {
-        return FEMALE;
-    }
 
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "Address=" + myAddress +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", sex='" + sex + '\'' +
-                '}';
-    }
-
-    public Address getAddress() {
-
-}
 }
 
 
