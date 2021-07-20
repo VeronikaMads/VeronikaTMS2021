@@ -5,3 +5,4 @@ public interface Method {
         return power*0.74;
     }
 }
+

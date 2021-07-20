@@ -9,7 +9,7 @@ import lombok.ToString;
 @Getter
 @Setter
 
-public class Transport implements Method { //создаем родительский класс Транспорт
+public abstract class Transport implements Method{ //создаем родительский класс Транспорт
     // обьявляем переменные (делаем их закрытыми)
     private double power;  // мощность в лошадиных силах
     private double speed; // скорость км/ч

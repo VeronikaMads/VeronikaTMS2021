@@ -13,6 +13,7 @@ public class Cargo extends Terrestrial { // класс Грузовой насл
     private int loadCapacity; // поле - грузоподьмность транспорта (т)
 
 
+
     public Cargo(double power, double speed, double weight, String brand, int numberOfWheels, int fuelConsumption, int loadCapacity) {
         super(power, speed, weight, brand, numberOfWheels, fuelConsumption);
         this.loadCapacity = loadCapacity;

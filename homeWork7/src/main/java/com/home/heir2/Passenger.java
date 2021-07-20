@@ -1,6 +1,7 @@
 package com.home.heir2;
 
 import com.home.heir1.Terrestrial;
+import com.sun.jdi.connect.Transport;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,7 +10,7 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper = true)
 
-public class Passenger extends Terrestrial { // класс Легковой
+public class Passenger extends  { // класс Легковой
     private String bodyType; // поле - Тип кузова
     private int numberOfPassengers; // поле - Количество пассажиров
 
