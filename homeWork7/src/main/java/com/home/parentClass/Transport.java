@@ -4,12 +4,14 @@ import com.home.metod.Method;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+
 @AllArgsConstructor
 @Getter
 @Setter
+@SuperBuilder
 
-public abstract class Transport implements Method{ //создаем родительский класс Транспорт
+public abstract class Transport implements Method { //создаем родительский класс Транспорт
     // обьявляем переменные (делаем их закрытыми)
     private double power;  // мощность в лошадиных силах
     private double speed; // скорость км/ч
@@ -30,3 +32,5 @@ public abstract class Transport implements Method{ //создаем родите
         System.out.println("Transport");
     }
 }
+
+
