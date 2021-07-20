@@ -1,20 +1,30 @@
 package com.home.parentClass;
 
+import com.home.metod.Method;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
+@AllArgsConstructor
 @Getter
 @Setter
-@AllArgsConstructor
-@ToString
-public class Transport { //создаем родительский класс Транспорт
+
+public class Transport implements Method { //создаем родительский класс Транспорт
     // обьявляем переменные (делаем их закрытыми)
-    private int power;  // мощность в лошадиных силах
-    private int speed; // скорость км/ч
-    private int weight; //масса кг
+    private double power;  // мощность в лошадиных силах
+    private double speed; // скорость км/ч
+    private double weight; //масса кг
     private String brand; // марка Volvo
+
+    @Override
+    public String toString() {
+        return "Transport{" +
+                "power kB=" + getPower(power) +
+                ", speed km / h=" + speed +
+                ", weight Kg=" + weight +
+                ", brand ='" + brand + '\'' +
+                '}';
+    }
 
     public Transport() {
         System.out.println("Transport");
