@@ -4,6 +4,7 @@ import com.home.heir2.Cargo;
 import com.home.heir2.Passenger;
 import com.home.heir3.Civil;
 import com.home.heir3.Military;
+import com.home.parentClass.Transport;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -59,10 +60,11 @@ public class Main {
                 .missile(3)
                 .build();
 
-//        System.out.println(cargo);
-//        System.out.println(passenger);
-//        System.out.println(civil);
-//        System.out.println(military);
-//        System.out.println(transport);
+        Transport [] transports = {Cargo, Passenger, Civil, Military};
+
+        System.out.println(Cargo);
+        System.out.println(Passenger);
+        System.out.println(Civil);
+        System.out.println(Military);
     }
 }

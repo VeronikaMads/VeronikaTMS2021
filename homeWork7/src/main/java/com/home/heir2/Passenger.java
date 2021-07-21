@@ -14,4 +14,5 @@ import lombok.experimental.SuperBuilder;
 public class Passenger extends Terrestrial { // класс Легковой
     private String bodyType; // поле - Тип кузова
     private int numberOfPassengers; // поле - Количество пассажиров
+
 }

@@ -12,6 +12,6 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 
 public class Cargo extends Terrestrial { // класс Грузовой наследник класса Наземный
-    private int loadCapacity; // поле - грузоподьмность транспорта (т)
+    private double loadCapacity; // поле - грузоподьмность транспорта (т)
 
 }
