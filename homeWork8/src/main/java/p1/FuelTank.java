@@ -3,13 +3,12 @@ package p1;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 
 @Getter
 @Setter
-@SuperBuilder
-@ToString(callSuper = true)
+@ToString
 
-public class FuelTank { //создали класс бензобак
+public abstract class FuelTank  { //создали класс бензобак
+    private double howMuchFuel; // поле - количесвто топлива в баке
+    }
 
-}

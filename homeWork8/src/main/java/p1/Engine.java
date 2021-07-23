@@ -2,13 +2,13 @@ package p1;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.experimental.SuperBuilder;
+import lombok.ToString;
 
 @Getter
 @Setter
-@SuperBuilder
+@ToString
 
-public class Engine  { //создали класс двигатель
-    //Чтобы машину завести нужно включить двигатель.
-    // создаем метод onEngine
-}
+public abstract class Engine  {
+
+    }
+

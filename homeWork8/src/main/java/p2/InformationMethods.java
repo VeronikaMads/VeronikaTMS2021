@@ -3,13 +3,13 @@ package p2;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 import p1.Car;
+import p1.FuelTank;
+
 
 import java.util.Scanner;
 
 @Getter
-@SuperBuilder
 @Setter
 @ToString(callSuper = true)
 public class InformationMethods implements Methods {
@@ -17,7 +17,7 @@ public class InformationMethods implements Methods {
     @Override
     public void onCar() {
         boolean isCorrect = true;
-        System.out.println("Внимание! Чтобы поехать, нужно включить двигатель! Вставьте ключ в зажигание и поверните его. ");
+        System.out.println("Внимание! Чтобы поехать, нужно включить двигатель! Вставьте ключ в зажигание и поверните его. "+"\n");
         while (true) {
             System.out.println("Если вы все поняли/сделали, введите цифру 1:");
             Scanner scanner = new Scanner(System.in);
@@ -36,23 +36,40 @@ public class InformationMethods implements Methods {
 
     @Override
     public void goesCar() {
-        System.out.println("Машина поехала!");
+        System.out.println("Машина поехала!"+"\n");
     }
 
     @Override
     public void offCar() {
-        System.out.println("Выключено зажигание машины");
+        System.out.println("Зажигание выключено"+"\n");
     }
 
     @Override
     public void onEngine() {
-        System.out.println("Двигатель включен");
+        System.out.println("Двигатель включен"+"\n");
     }
 
     @Override
     public void distance(Car car, double time) {
-       double distance = car.getSpeed()*time;
-        System.out.println("За время ЧЧ,ММ " +time+ "автомобиль" +car.getBrand()+"\n"+ "двигаясь со средней скоростью "
-                +car.getSpeed()+ "\n" + "проедет" +distance+ "км");
+        double distance = car.getSpeed() * time;
+        System.out.println("За время " + time + " часов, автомобиль " + car.getBrand() + " двигаясь со средней скоростью " + car.getSpeed() + " км/ч проедет " + distance + " км ");
+    }
+
+    @Override
+    public void checkFuel(FuelTank fuelTank) {
+        if (fuelTank.getHowMuchFuel()>10){
+            System.out.println("Топливо хватает! Можете ехать.");
+        } if (10 <= fuelTank.getHowMuchFuel() && fuelTank.getHowMuchFuel()> 4){
+            System.out.println("Внимание! Топливо заканчивается. Рекомендую заправится!");
+        }
+
+    }
+    public double fuelFillingColumn(FuelTank fuelTank){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Сколько литров хотите заправить?:");
+        double number2 = scanner.nextDouble();
+        fuelTank.getHowMuchFuel(double howMuchFuel){
+        return howMuchFuel+number2;
+    }
     }
 }
