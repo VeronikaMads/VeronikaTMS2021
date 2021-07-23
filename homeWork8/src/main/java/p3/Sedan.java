@@ -1,8 +1,10 @@
-package p1;
+package p3;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import p1.Car;
+import p1.FuelBak;
 import p2.Methods;
 
 @Getter
@@ -10,8 +12,8 @@ import p2.Methods;
 
 @ToString(callSuper = true)
 public class Sedan extends Car implements Methods {
-    public Sedan(double speed, String brand, double fuelConsumption) {
-        super(speed, brand, fuelConsumption);
+    public Sedan(double speedCar, String brandCar) {
+        super(speedCar, brandCar);
     }
 
     @Override
@@ -40,12 +42,13 @@ public class Sedan extends Car implements Methods {
     }
 
     @Override
-    public void checkFuel(FuelTank fuelTank) {
+    public void checkFuel(FuelBak fuelTank) {
 
     }
 
     @Override
-    public double fuelFillingColumn(FuelTank fuelTank) {
-        return 0;
+    public void fuelFillingColumn(FuelBak fuelTank) {
+
     }
 }
+

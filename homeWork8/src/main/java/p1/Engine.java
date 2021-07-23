@@ -8,7 +8,10 @@ import lombok.ToString;
 @Setter
 @ToString
 
-public abstract class Engine  {
+public abstract class Engine  { // класс - Двигатель
+    private double powerEngine; //    мощность двигателя;
+    private double howMuchFuelUsage; // поле - расход топлива л/100км
+
 
     }
 
