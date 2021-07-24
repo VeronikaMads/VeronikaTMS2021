@@ -4,15 +4,14 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import p1.Car;
-import p1.FuelBak;
-
 
 import java.util.Scanner;
 
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class InformationMethods implements Methods {
+public class InformationMethods implements MethodsCar {
+
 
     @Override
     public void onCar() {
@@ -35,6 +34,11 @@ public class InformationMethods implements Methods {
     }
 
     @Override
+    public void onEngine() {
+        System.out.println("Двигатель включен" + "\n");
+    }
+
+    @Override
     public void goesCar() {
         System.out.println("Машина поехала!" + "\n");
     }
@@ -45,34 +49,10 @@ public class InformationMethods implements Methods {
     }
 
     @Override
-    public void onEngine() {
-        System.out.println("Двигатель включен" + "\n");
-    }
-
-    @Override
     public void distance(Car car, double time) {
         double distance = car.getSpeedCar() * time;
         System.out.println("За время " + time + " часов, автомобиль " + car.getBrandCar() + " двигаясь со средней скоростью " + car.getSpeedCar() + " км/ч проедет " + distance + " км ");
     }
 
-    @Override
-    public void checkFuel(FuelBak fuelTank) {
-        if (fuelTank.getHowMuchFuelingBak() > 10) {
-            System.out.println("Топливо хватает! Можете ехать.");
-        }
-        if (10 <= fuelTank.getHowMuchFuelingBak() && fuelTank.getHowMuchFuelingBak() > 4) {
-            System.out.println("Внимание! Топливо заканчивается. Рекомендую заправится!");
-        }
-
-    }
-
-    public void fuelFillingColumn(FuelBak fuelTank) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Сколько литров хотите заправить?:");
-        double number2 = scanner.nextDouble();
-        double result = fuelTank.getHowMuchFuelingBak() + number2;
-        System.out.println("Спасибо! Вы запрвились на " + number2 + " литров. Итого топлива в баке " + result);
-
-    }
 }
 

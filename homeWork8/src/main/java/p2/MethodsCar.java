@@ -1,9 +1,8 @@
 package p2;
 
 import p1.Car;
-import p1.FuelBak;
 
-public interface Methods {
+public interface MethodsCar {
     //    Чтобы поехать, машину необходимо завести
     // создаем метод onCar
     public void onCar();
@@ -21,9 +20,4 @@ public interface Methods {
     // создаем метод котрый показывает расстояние поездки за определенный период времени.
     public void distance(Car car, double time);
 
-    // создаем метод проверки топлива в бензобаке
-    public void checkFuel(FuelBak fuelTank);
-
-    // создаем метод заправки топлива
-    public void fuelFillingColumn(FuelBak fuelTank);
 }

@@ -4,14 +4,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import p1.Car;
-import p1.FuelBak;
-import p2.Methods;
+import p2.MethodsCar;
 
 @Getter
 @Setter
 
 @ToString(callSuper = true)
-public class Sedan extends Car implements Methods {
+public class Sedan extends Car implements MethodsCar {
     public Sedan(double speedCar, String brandCar) {
         super(speedCar, brandCar);
     }
@@ -38,16 +37,6 @@ public class Sedan extends Car implements Methods {
 
     @Override
     public void distance(Car car, double time) {
-
-    }
-
-    @Override
-    public void checkFuel(FuelBak fuelTank) {
-
-    }
-
-    @Override
-    public void fuelFillingColumn(FuelBak fuelTank) {
 
     }
 }
