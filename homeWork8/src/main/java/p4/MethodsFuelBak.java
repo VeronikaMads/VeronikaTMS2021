@@ -1,12 +1,11 @@
-package p2;
+package p4;
 
-import p1.FuelBak;
+import p1.FuelBakCar;
 
 public interface MethodsFuelBak {
-
     // создаем метод проверки топлива в бензобаке
-    public void checkFuel(FuelBak fuelBak);
+    public void checkFuelBak(FuelBakCar fuelBakCar);
 
     // создаем метод заправки топлива
-    public void fuelFillingBak(FuelBak fuelBak);
+    public void fuelFillingBak(FuelBakCar fuelBakCar);
 }
