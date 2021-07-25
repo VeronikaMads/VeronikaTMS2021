@@ -29,10 +29,11 @@ public class Main {
         Person person9 = new Person("Максим", "MALE", 25, person9Address);
 
         PersonRegistry registry = new PersonRegistry(new Person[]{person1, person2, person3, person4, person5, person6, person7, person8, person9});
-        registry.findPersonsByCity("Минск");
-        registry.findPersonsByName("Максим");
         registry.findPersonsByNameAge();
+        registry.findPersonsByName("Максим");
         registry.findPersonsByAge25to27();
+        registry.findPersonsByCity("Минск");
+
 
     }
 }
