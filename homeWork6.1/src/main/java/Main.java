@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         //         создаем список людей и передаем их в PersonRegistry
         Address person1Address = new Address("Минск", "Беларусь");
-        Person person1 = new Person("Паша", "MALE", 15, person1Address);
+        Person person1 = new Person("Паша","MALE", 15, person1Address);
 
         Address person2Address = new Address("Брест", "Беларусь");
         Person person2 = new Person("Миша", "MALE", 27, person2Address);
@@ -29,10 +29,11 @@ public class Main {
         Person person9 = new Person("Максим", "MALE", 25, person9Address);
 
         PersonRegistry registry = new PersonRegistry(new Person[]{person1, person2, person3, person4, person5, person6, person7, person8, person9});
-        System.out.println("Колличество людей пригодных к службе от 18 до 27 лет:" + registry.countPeopleAges());
-        System.out.println("Колличество людей проживающих в Минске: " + registry.countPeopleAddress(new Address("Минск", "Беларусь")));
-        System.out.println("Колличество людей с именем Mаксим : " + registry.countPeopleName("Максим"));
-        System.out.println("Колличество людей в возрасте от 25 до 27: " + registry.countPeopleAge());
+        registry.findPersonsByCity("Минск");
+        registry.findPersonsByName("Максим");
+        registry.findPersonsByNameAge();
+        registry.findPersonsByAge25to27();
+
     }
 }
 
