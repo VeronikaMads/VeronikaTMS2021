@@ -1,7 +1,6 @@
 package com.home.heir1;
 
 import com.home.parentClass.Transport;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
