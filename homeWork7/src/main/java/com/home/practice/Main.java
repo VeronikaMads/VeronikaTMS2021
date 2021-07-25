@@ -29,7 +29,6 @@ public class Main {
                 .numberOfWheels(8)
                 .fuelConsumption(26)
                 .loadCapacity(23)
-                .
                 .build();
 
         Passenger passenger = Passenger.builder()
@@ -70,17 +69,12 @@ public class Main {
         System.out.println(civil);
         System.out.println(military);
 
-//        Calculation calculation = new CalculationBuilder<>
-//        calculation.cargoWeightInfo(cargo);
-//        calculation.passengerAllInfo(passenger,25);
         Calculation calculation = new Calculation();
-
-
-
-
-
-
-
+        calculation.passengerAllInfo(passenger,25);
+        calculation.cargoWeightInfo(cargo);
+        calculation.civilInfo(civil);
+        calculation.militaryCatapultInfo(military);
+        calculation.militaryRacketInfo(military);
 
     }
 }

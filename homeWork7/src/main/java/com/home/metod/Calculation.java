@@ -13,8 +13,7 @@ import java.util.Scanner;
 
 @Getter
 @Setter
-@ToString(callSuper = true)
-@SuperBuilder
+
 public class Calculation {
 
     public void cargoWeightInfo(Cargo cargo) { // вызываем метод
