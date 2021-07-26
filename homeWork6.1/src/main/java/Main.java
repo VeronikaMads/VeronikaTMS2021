@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         //         создаем список людей и передаем их в PersonRegistry
         Address person1Address = new Address("Минск", "Беларусь");
-        Person person1 = new Person("Паша","MALE", 15, person1Address);
+        Person person1 = new Person("Паша", "MALE", 15, person1Address);
 
         Address person2Address = new Address("Брест", "Беларусь");
         Person person2 = new Person("Миша", "MALE", 27, person2Address);
@@ -33,7 +33,6 @@ public class Main {
         registry.findPersonsByName("Максим");
         registry.findPersonsByAge25to27();
         registry.findPersonsByCity("Минск");
-
 
     }
 }

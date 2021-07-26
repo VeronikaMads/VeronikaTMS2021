@@ -27,7 +27,7 @@ public class PersonRegistry {
                 count++;
             }
         }
-        System.out.println("Метод выводит количесвто людей с определенным именем: " +count);
+        System.out.println("Метод выводит количесвто людей с определенным именем: " + count);
     }
 
     // метод выводит имена всех людей годных к службе в возросте от 18 до 27 лет.
@@ -37,7 +37,7 @@ public class PersonRegistry {
             if (personsAge >= 18 && personsAge <= 27 && person.getSex().equalsIgnoreCase(Person.MALE)) {
                 System.out.println(person.getName());
             }
-            System.out.println(person.getName() );
+            System.out.println(person.getName());
         }
     }
 
@@ -50,7 +50,7 @@ public class PersonRegistry {
                 count++;
             }
         }
-        System.out.println("метод выводит количесвто всех людей годных к службе в возросте от 25 до 27 лет: "+count);
+        System.out.println("метод выводит количесвто всех людей годных к службе в возросте от 25 до 27 лет: " + count);
     }
 
 }
