@@ -17,12 +17,14 @@ import p4.InformationMethodsFuelBakCar;
 public class Main {
     public static void main(String[] args) {
         Car sedan = new Sedan(80, "Sedan");
-//        FuelBakCar fuelBakSedan = new FuelBakSedan(5,55,"Алюиний");
         FuelBakCar fuelBakSedan = new FuelBakSedan(5,55,"Алюминий");
         InformationMethods informationMethods = new InformationMethods (sedan);
         InformationMethodsFuelBakCar informationMethodsFuelBakCar = new InformationMethodsFuelBakCar(fuelBakSedan);
-//        informationMethods.distance(25);
+        informationMethods.distance(25);
+        informationMethodsFuelBakCar.noFuel();
         informationMethodsFuelBakCar.checkFuelBak();
+        informationMethodsFuelBakCar.fuelFillingBak();
+        informationMethodsFuelBakCar.setFuelBakCar(fuelBakSedan);
     }
 }
 

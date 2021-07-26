@@ -4,8 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import p1.FuelBakCar;
-@Getter
+
 @Setter
+@Getter
 @ToString(callSuper = true)
 
 public class FuelBakSedan extends FuelBakCar {
