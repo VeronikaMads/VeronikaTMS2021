@@ -1,7 +1,5 @@
 package p2;
 
-import p1.Car;
-
 public interface MethodsCar {
     //    Чтобы поехать, машину необходимо завести
     // создаем метод onCar
@@ -18,6 +16,6 @@ public interface MethodsCar {
     public void offCar();
 
     // создаем метод котрый показывает расстояние поездки за определенный период времени.
-    public void distance(Car car, double time);
+    public void distance(double time);
 
 }
