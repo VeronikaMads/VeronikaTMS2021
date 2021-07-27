@@ -1,30 +1,24 @@
 package com.home.metod;
 
-import com.home.parentClass.Transport;
+import com.home.heir2.Cargo;
+import com.home.heir2.Passenger;
+import com.home.heir3.Civil;
+import com.home.heir3.Military;
 
 
 public interface Method {
-    default double getPower(double power) {
+
+    default double getPower(double power) {// переводим лошадиные силы в КВ (мощность)
         return power * 0.74;
     }
+    void passengerAllInfo(Passenger passenger, double time);
 
-    default void passengerDistanceInfo(Transport transport, double time, double distance) {
-    }
-    default void passengerPetrolInfo (Transport transport, double petrol){
-    }
-//    default void passengerAllInfo (Transport transport){
-//    }
+    void cargoWeightInfo(Cargo cargo); // метод о грузоподьемносии грузового авто
 
-    default void cargoWeightInfo(Transport transport) {
-    }
+    void civilInfo(Civil civil); // метод инфо о количестве пассажиров в гражданском самолете
 
-    default void civilInfo(Transport transport) {
-    }
+    void militaryRacketInfo(Military military); // метод вывода ракет
 
-    default void militaryRacketInfo(Transport transport) {
-    }
+    void militaryCatapultInfo(Military military); //  метод катапульта
 
-    default void militaryCatapultInfo(Transport transport) {
-    }
 }
-
