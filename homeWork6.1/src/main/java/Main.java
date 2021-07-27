@@ -29,10 +29,11 @@ public class Main {
         Person person9 = new Person("Максим", "MALE", 25, person9Address);
 
         PersonRegistry registry = new PersonRegistry(new Person[]{person1, person2, person3, person4, person5, person6, person7, person8, person9});
-        System.out.println("Колличество людей пригодных к службе от 18 до 27 лет:" + registry.countPeopleAges());
-        System.out.println("Колличество людей проживающих в Минске: " + registry.countPeopleAddress(new Address("Минск", "Беларусь")));
-        System.out.println("Колличество людей с именем Mаксим : " + registry.countPeopleName("Максим"));
-        System.out.println("Колличество людей в возрасте от 25 до 27: " + registry.countPeopleAge());
+        registry.findPersonsByNameAge();
+        registry.findPersonsByName("Максим");
+        registry.findPersonsByAge25to27();
+        registry.findPersonsByCity("Минск");
+
     }
 }
 
