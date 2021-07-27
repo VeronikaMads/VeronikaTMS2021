@@ -1,5 +1,6 @@
 package Samsung;
 
+
 import p11.IHead;
 
 public class SamsungHead implements IHead { // класс голова

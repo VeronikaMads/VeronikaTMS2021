@@ -1,6 +1,8 @@
 package pSony;
 
+
 import p11.IHead;
+
 
 public class SonyHead implements IHead { // класс голова
     private  double price;

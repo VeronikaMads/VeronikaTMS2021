@@ -1,5 +1,6 @@
 package pToshiba;
 
+
 import p11.IHead;
 
 public class ToshibaHead implements IHead { // класс голова

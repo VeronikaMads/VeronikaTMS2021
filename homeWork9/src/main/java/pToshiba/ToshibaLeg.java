@@ -1,8 +1,10 @@
 package pToshiba;
 
+
+import p11.IHand;
 import p11.ILeg;
 
-public class ToshibaLeg implements ILeg {
+public class ToshibaLeg implements ILeg, IHand {
     private double price;
 
     public ToshibaLeg(double price) {
@@ -15,6 +17,11 @@ public class ToshibaLeg implements ILeg {
     @Override
     public void step() {
         System.out.println("Идет нога Sony");
+    }
+
+    @Override
+    public void upHand() {
+
     }
 
     @Override

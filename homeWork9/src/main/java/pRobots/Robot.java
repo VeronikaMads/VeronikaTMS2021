@@ -3,15 +3,17 @@ package pRobots;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
 import p11.IHand;
 import p11.IHead;
 import p11.ILeg;
 import p11.IRobot;
 
+
 @Getter
 @Setter
 @ToString
-public class Robot implements IRobot {
+public abstract class Robot implements IRobot {
     private IHead head;
     private IHand hand;
     private ILeg leg;
@@ -23,7 +25,8 @@ public Robot(IHead head, IHand hand, ILeg leg) {
         this.leg = leg;
         }
 
-//public class Robot implements IRobot,IHand,IHead,ILeg {
+
+    //public class Robot implements IRobot,IHand,IHead,ILeg {
 //    private String head;
 //    private String hand;
 //    private String leg;
@@ -44,9 +47,6 @@ public void action() {
     hand.upHand();
     leg.step();
 }
-
-    public Robot() {
-    }
 
 
     @Override
