@@ -1,17 +1,17 @@
 package p2;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 import p1.Car;
 
 import java.util.Scanner;
 
 @Getter
 @Setter
-@ToString(callSuper = true)
+@AllArgsConstructor
 public class InformationMethods implements MethodsCar {
-
+private Car car;
 
     @Override
     public void onCar() {
@@ -49,7 +49,7 @@ public class InformationMethods implements MethodsCar {
     }
 
     @Override
-    public void distance(Car car, double time) {
+    public void distance(double time) {
         double distance = car.getSpeedCar() * time;
         System.out.println("За время " + time + " часов, автомобиль " + car.getBrandCar() + " двигаясь со средней скоростью " + car.getSpeedCar() + " км/ч проедет " + distance + " км ");
     }

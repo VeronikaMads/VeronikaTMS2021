@@ -7,13 +7,12 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
+@ToString(callSuper = true)
 @AllArgsConstructor
 
 public abstract class FuelBakCar { //создали класс бензобак
     private double howMuchFuelingBak; // поле - количесвто топлива в баке
-    private double whatMaxBakVolume; // поле - объем бака для топлива
+    private double maxVolume; // поле - объем бака для топлива
     private String typesOfFuelBak; // тип топливного бака (из чего сделан)
-
 }
 
