@@ -1,8 +1,4 @@
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 public class PersonRegistry {
     private Person[] citizens; // создаем массив граждан (хранение данных о людях)
 
@@ -11,20 +7,19 @@ public class PersonRegistry {
     }
 
     // метод выводит количесвто людей проживающих в городе
-    public int countPeopleAddress(Address address) {
+    public void findPersonsByCity(String city) {
         int count = 0;
         for (Person person : citizens) {
-            Address personsAddress = person.getAddress();
-            if (personsAddress.getCity().equals(address.getCity())
-                    && personsAddress.getCountry().equals(address.getCountry())) {
+            Address personsAddress = person.getMyAddress();
+            if (personsAddress.getCity().equals(city)) {
                 count++;
             }
         }
-        return count;
+        System.out.println("Метод выводит количесвто людей проживающих в городе: " + count);
     }
 
     // метод выводит количесвто людей с определенным именем.
-    public int countPeopleName(String name) {
+    public void findPersonsByName(String name) {
         int count = 0;
         for (Person person : citizens) {
             String personsName = person.getName();
@@ -32,23 +27,22 @@ public class PersonRegistry {
                 count++;
             }
         }
-        return count;
+        System.out.println("Метод выводит количесвто людей с определенным именем: " + count);
     }
 
-    // метод выводит количесвто всех людей годных к службе в возросте от 18 до 27 лет.
-    public int countPeopleAge() {
-        int count = 0;
+    // метод выводит имена всех людей годных к службе в возросте от 18 до 27 лет.
+    public void findPersonsByNameAge() {
         for (Person person : citizens) {
             int personsAge = person.getAge();
             if (personsAge >= 18 && personsAge <= 27 && person.getSex().equalsIgnoreCase(Person.MALE)) {
-                count++;
+                System.out.println(person.getName());
             }
+            System.out.println(person.getName());
         }
-        return count;
     }
 
     // метод выводит количесвто всех людей годных к службе в возросте от 25 до 27 лет.
-    public int countPeopleAges() {
+    public void findPersonsByAge25to27() {
         int count = 0;
         for (Person person : citizens) {
             int personsAges = person.getAge();
@@ -56,8 +50,13 @@ public class PersonRegistry {
                 count++;
             }
         }
-        return count;
+        System.out.println("метод выводит количесвто всех людей годных к службе в возросте от 25 до 27 лет: " + count);
     }
+
 }
+
+
+
+
 
 
