@@ -16,7 +16,7 @@ public class Computer {
     private final int recursOfCycles;  // ресурс полных циклов работы (вкл/выкл)
 
     private int cycles; // цикл перезапуска
-    private boolean burn; // сгорел ли комьпютер?
+    private boolean isBurn; // сгорел ли комьпютер?
     private boolean isOn; // включен ли компьютер ?
     private Scanner scanner = new Scanner(System.in); // запускаем сканер
 
@@ -34,7 +34,7 @@ public class Computer {
 
     //добавляем метод метод включить (on) {
     public void on() {
-        if (!burn) { // проверяем не сожжен ли компьютер, если нет то..
+        if (!isBurn) { // проверяем не сожжен ли компьютер, если нет то..
             System.out.println(" Включение.."); // компьютер включается
             System.out.println(" Внимание ! Введите число от 0 до 1 ");
             Random random = new Random(); // создаем рандом
@@ -45,12 +45,10 @@ public class Computer {
                 isOn = true;
                 off();
             } else {  //если введенное вами число не совпадет с рандомным, то компьютер сгорает.
-                burn = true;
-                System.out.println("Компьютер сгорел");
+                burn();
             }
         } else {
-            burn = true;
-            System.out.println("Компьютер сгорел");
+            burn();
         }
     }
 
@@ -58,14 +56,20 @@ public class Computer {
     //          добавляем метод выключить (of())
     public void off() {
         System.out.println("Выключение...");
-        if (!burn) { //проверяем не сожжен ли компьютер, если нет то..
+        if (!isBurn) { //проверяем не сожжен ли компьютер, если нет то..
             System.out.println(" Компьютер выключен");
-            System.out.println(" Количество оставшихся циклов" + recursOfCycles );
+            System.out.println(" Количество оставшихся циклов" + recursOfCycles);
             on();
         } else {
-            burn = true;
-            System.out.println("Компьютер сгорел");
+            burn();
 
+        }
+    }
+
+    //т.к. логика повторяется , создаю отдельный метод
+    public void burn() {
+        if (isBurn = true) {
+            System.out.println("Компьютер сгорел");
         }
     }
 }
