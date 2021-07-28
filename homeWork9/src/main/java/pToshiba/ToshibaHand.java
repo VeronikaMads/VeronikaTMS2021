@@ -1,28 +1,29 @@
 package pToshiba;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import p11.IHand;
-import p11.IHead;
 
-
-public class ToshibaHand implements IHand, IHead { // класс рука
+@ToString(callSuper = true)
+@Setter
+@Getter
+public class ToshibaHand implements IHand { // класс рука
     private double price;
+
+    public ToshibaHand() {
+    }
 
     public ToshibaHand(double price) {
         this.price = price;
     }
 
-    public ToshibaHand() {
-    }
 
     @Override
     public void upHand() {
         System.out.println("Поднимается рука вверх Toshiba");
     }
 
-    @Override
-    public void speak() {
-
-    }
 
     @Override
     public double getPrice() {

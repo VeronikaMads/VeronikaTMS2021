@@ -13,8 +13,14 @@ import p11.ILeg;
 @ToString(callSuper = true)
 public class RobotV554 extends Robot {
 
+
     public RobotV554(IHead head, IHand hand, ILeg leg) {
         super(head, hand, leg);
+    }
+
+    @Override
+    public double getPrice() {
+        return super.getPrice();
     }
 }
 

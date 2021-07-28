@@ -1,27 +1,27 @@
 package Samsung;
 
 
-import p11.IHand;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import p11.ILeg;
 
-public class SamsungLeg implements ILeg, IHand {
+@Setter
+@Getter
+@ToString(callSuper = true)
+public class SamsungLeg implements ILeg {
     private double price;
+
+    public SamsungLeg() {
+    }
 
     public SamsungLeg(double price) {
         this.price = price;
     }
 
-    public SamsungLeg() {
-    }
-
     @Override
     public void step() {
-        System.out.println("Идет нога Sony");
-    }
-
-    @Override
-    public void upHand() {
-
+        System.out.println("Идет нога Samsung");
     }
 
     @Override

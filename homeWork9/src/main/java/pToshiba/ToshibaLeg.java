@@ -1,27 +1,26 @@
 package pToshiba;
 
-
-import p11.IHand;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import p11.ILeg;
 
-public class ToshibaLeg implements ILeg, IHand {
+@Getter
+@Setter
+@ToString(callSuper = true)
+public class ToshibaLeg implements ILeg {
     private double price;
+
+    public ToshibaLeg() {
+    }
 
     public ToshibaLeg(double price) {
         this.price = price;
     }
 
-    public ToshibaLeg() {
-    }
-
     @Override
     public void step() {
-        System.out.println("Идет нога Sony");
-    }
-
-    @Override
-    public void upHand() {
-
+        System.out.println("Идет нога Toshiba");
     }
 
     @Override

@@ -4,14 +4,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import p11.IHand;
-import p11.IHead;
-import p11.ILeg;
 
 
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class SonyHand implements IHand, IHead, ILeg { // класс рука
+public class SonyHand implements IHand { // класс рука
     private double price;
 
     public SonyHand(double price) {
@@ -26,15 +24,6 @@ public class SonyHand implements IHand, IHead, ILeg { // класс рука
         System.out.println("Поднимается рука вверх Sony");
     }
 
-    @Override
-    public void speak() {
-
-    }
-
-    @Override
-    public void step() {
-
-    }
 
     @Override
     public double getPrice() {
