@@ -8,10 +8,10 @@ import p11.IHand;
 import p11.IHead;
 import p11.ILeg;
 
-
 @Getter
 @Setter
 @ToString(callSuper = true)
+
 public class RobotK560 extends Robot {
     public RobotK560(IHead head, IHand hand, ILeg leg) {
         super(head, hand, leg);

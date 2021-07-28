@@ -65,7 +65,7 @@ public class Main {
         robotises.add(robotK560);
         robotises.add(robotV554);
         for (Robot robot : robotises) {
-            System.out.println("Цены: "+robot.getPrice());
+            System.out.println("Цены: " + robot.getPrice());
         }
 
 

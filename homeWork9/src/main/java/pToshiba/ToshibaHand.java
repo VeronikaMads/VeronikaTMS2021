@@ -24,7 +24,6 @@ public class ToshibaHand implements IHand { // класс рука
         System.out.println("Поднимается рука вверх Toshiba");
     }
 
-
     @Override
     public double getPrice() {
         return price;

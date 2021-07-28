@@ -3,17 +3,16 @@ package pRobots;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
 import p11.IHand;
 import p11.IHead;
 import p11.ILeg;
 import p11.IRobot;
 
-
 @Getter
 @Setter
 @ToString
-public abstract class Robot implements IRobot{
+
+public abstract class Robot implements IRobot {
     private IHead head;
     private IHand hand;
     private ILeg leg;

@@ -5,18 +5,17 @@ import lombok.Setter;
 import lombok.ToString;
 import p11.IHand;
 
-
 @Getter
 @Setter
 @ToString(callSuper = true)
 public class SonyHand implements IHand { // класс рука
     private double price;
 
-    public SonyHand(double price) {
-        this.price = price;
+    public SonyHand() {
     }
 
-    public SonyHand() {
+    public SonyHand(double price) {
+        this.price = price;
     }
 
     @Override

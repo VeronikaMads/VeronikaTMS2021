@@ -3,7 +3,6 @@ package pSony;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import p11.IHand;
 import p11.ILeg;
 
 @Setter
