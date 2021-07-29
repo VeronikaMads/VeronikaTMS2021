@@ -3,9 +3,11 @@ package p4;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import p1.Engine;
 import p1.FuelBakCar;
 
 import java.util.Scanner;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -14,21 +16,14 @@ public class InformationMethodsFuelBakCar implements MethodsFuelBak {
 
     @Override
     public void checkFuelBak() { // метод проверяет хватает ли бензина?
-        if (fuelBakCar.getHowMuchFuelingBak() > 10) {
-            System.out.println("Топливо хватает! Можете ехать.");
-        } noFuel();
-
-    }
-    // создаем метод для нехватки топлива в баке.
-    @Override
-    public void noFuel() {
-        if (10 <= fuelBakCar.getHowMuchFuelingBak() && fuelBakCar.getHowMuchFuelingBak() > 4) {
-            System.out.println("Внимание! Топливо заканчивается. Рекомендую заправится!");
-            fuelFillingBak();
+        double howMuchFuelingBak = fuelBakCar.getHowMuchFuelingBak();
+        if (howMuchFuelingBak >= 10) {
+            System.out.println("В баке " + howMuchFuelingBak + " Топливо хватает! Можете ехать.");
+        } else {
+            System.out.println("Топлива меньше 10 литров. Для того что бы поехать вам нужно заправиться!");
         }
-
+        fuelFillingBak();
     }
-
 
     @Override
     public void fuelFillingBak() { // метод который осуществляюет заправку и проверяет хватате ли места в баке.
@@ -46,4 +41,5 @@ public class InformationMethodsFuelBakCar implements MethodsFuelBak {
         }
     }
 }
+
 

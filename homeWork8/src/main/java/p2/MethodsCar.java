@@ -16,6 +16,8 @@ public interface MethodsCar {
     public void offCar();
 
     // создаем метод котрый показывает расстояние поездки за определенный период времени.
-    public void distance(double time);
+    public void distance();
+
+    public void calculationFuel(double time);
 
 }
