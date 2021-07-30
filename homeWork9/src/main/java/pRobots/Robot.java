@@ -11,43 +11,25 @@ import p11.IRobot;
 @Getter
 @Setter
 @ToString
-public class Robot implements IRobot {
+
+public abstract class Robot implements IRobot {
     private IHead head;
     private IHand hand;
     private ILeg leg;
+    private IRobot getPrice;
 
-
-public Robot(IHead head, IHand hand, ILeg leg) {
+    public Robot(IHead head, IHand hand, ILeg leg) {
         this.head = head;
         this.hand = hand;
         this.leg = leg;
-        }
-
-//public class Robot implements IRobot,IHand,IHead,ILeg {
-//    private String head;
-//    private String hand;
-//    private String leg;
-//    public Robot(String head, String hand, String leg) {
-//        this.head = head;
-//        this.hand = hand;
-//        this.leg = leg;
-//    }
-//    @Override
-//    public void action() {
-//        speak();
-//        upHand();
-//        step();
-//    }
-@Override
-public void action() {
-    head.speak();
-    hand.upHand();
-    leg.step();
-}
-
-    public Robot() {
     }
 
+    @Override
+    public void action() {
+        head.speak();
+        hand.upHand();
+        leg.step();
+    }
 
     @Override
     public double getPrice() {

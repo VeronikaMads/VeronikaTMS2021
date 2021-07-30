@@ -6,7 +6,4 @@ public interface MethodsFuelBak {
 
     // создаем метод заправки топлива
     public void fuelFillingBak();
-
-    // создаем метод для нехватки топлива в баке.
-    public void noFuel();
 }

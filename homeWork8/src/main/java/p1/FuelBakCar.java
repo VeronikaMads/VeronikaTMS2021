@@ -7,7 +7,7 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString(callSuper = true)
+@ToString
 @AllArgsConstructor
 
 public abstract class FuelBakCar { //создали класс бензобак

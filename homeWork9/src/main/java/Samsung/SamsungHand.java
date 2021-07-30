@@ -2,22 +2,26 @@ package Samsung;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import p11.IHand;
+
+
 @Getter
 @Setter
+@ToString(callSuper = true)
 public class SamsungHand implements IHand { // класс рука
     private double price;
+
+    public SamsungHand() {
+    }
 
     public SamsungHand(double price) {
         this.price = price;
     }
 
-    public SamsungHand() {
-    }
-
     @Override
     public void upHand() {
-        System.out.println("Поднимается рука вверх Toshiba");
+        System.out.println("Поднимается рука вверх Samsung");
     }
 
     @Override

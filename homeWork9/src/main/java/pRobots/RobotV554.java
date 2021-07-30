@@ -10,18 +10,16 @@ import p11.ILeg;
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class RobotSamsung extends Robot {
-    private final String brand;
 
-    public RobotSamsung(IHead head, IHand hand, ILeg leg, String brand) {
+public class RobotV554 extends Robot {
+    public RobotV554(IHead head, IHand hand, ILeg leg) {
         super(head, hand, leg);
-        this.brand = brand;
     }
 
     @Override
-    public void action() {
-        super.action();
+    public double getPrice() {
+        return super.getPrice();
     }
-
 }
+
 
