@@ -1,6 +1,8 @@
-package p2;
+package p3;
 
 import jdk.jshell.Snippet;
+import p2.Clothes;
+import p2.PantsClothes;
 
 public class ClassicPants implements PantsClothes {
     private Clothes.Status status = Clothes.Status.OFF;

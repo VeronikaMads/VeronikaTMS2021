@@ -1,6 +1,9 @@
-package p2;
+package p3;
 
-public class Coat implements BodyClothes {
+import p2.BodyClothes;
+import p2.Clothes;
+
+public class Coat implements BodyClothes, Clothes {
     private Clothes.Status status = Clothes.Status.OFF;
 
     @Override
@@ -14,8 +17,8 @@ public class Coat implements BodyClothes {
 
     @Override
     public void takeOff() {
-        if (status == Clothes.Status.OFF) {
-            status = Clothes.Status.ON;
+        if (status == Status.ON) {
+            status = Status.OFF;
             System.out.println("Пальто снято");
         } else System.out.println("На вас не было надето пальто");
     }

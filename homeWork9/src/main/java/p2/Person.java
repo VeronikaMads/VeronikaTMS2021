@@ -1,28 +1,38 @@
 package p2;
 
-public abstract class Person implements LegsClothes, BodyClothes, PantsClothes {
-    private String name;
-    private LegsClothes shoes;
-    private BodyClothes jacket;
-    private PantsClothes pants;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-    public Person(String name, LegsClothes shoes, BodyClothes jacket, PantsClothes pants) {
+@Getter
+@Setter
+@ToString
+public abstract class Person implements Clothes {
+    private String name;
+    private LegsClothes legsClothes;
+    private BodyClothes bodyClothes;
+    private PantsClothes pantsClothes;
+
+    public Person() {
+    }
+
+    public Person(String name, LegsClothes legsClothes, BodyClothes bodyClothes, PantsClothes pantsClothes) {
         this.name = name;
-        this.shoes = shoes;
-        this.jacket = jacket;
-        this.pants = pants;
+        this.legsClothes = legsClothes;
+        this.bodyClothes = bodyClothes;
+        this.pantsClothes = pantsClothes;
     }
 
     public void getDressed() {
-        shoes.putOn();
-        jacket.putOn();
-        pants.putOn();
+        legsClothes.putOn();
+        bodyClothes.putOn();
+        pantsClothes.putOn();
     }
 
     public void unDress() {
-        shoes.takeOff();
-        jacket.takeOff();
-        pants.takeOff();
+        legsClothes.takeOff();
+        bodyClothes.takeOff();
+        pantsClothes.takeOff();
 
     }
 }

@@ -1,4 +1,7 @@
-package p2;
+package p3;
+
+import p2.BodyClothes;
+import p2.Clothes;
 
 public class Blazer implements BodyClothes {
     private Clothes.Status status = Clothes.Status.OFF;

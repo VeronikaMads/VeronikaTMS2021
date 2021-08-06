@@ -1,6 +1,9 @@
-package p2;
+package p3;
 
-public class Shoes implements LegsClothes {
+import p2.Clothes;
+import p2.LegsClothes;
+
+public class Shoes implements LegsClothes, Clothes {
     private Clothes.Status status = Clothes.Status.OFF;
     @Override
     public void putOn() {
@@ -12,8 +15,8 @@ public class Shoes implements LegsClothes {
 
     @Override
     public void takeOff() {
-        if (status == Clothes.Status.OFF) {
-            status = Clothes.Status.ON;
+        if (status == Status.ON) {
+            status = Status.OFF;
             System.out.println("Туфли сняты");
         } else System.out.println("На вас не былы надеты туфли");
     }
