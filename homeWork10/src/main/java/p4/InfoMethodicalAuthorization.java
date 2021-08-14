@@ -2,58 +2,62 @@ package p4;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
-import java.util.Scanner;
 @Getter
 @Setter
+@ToString(callSuper = true)
 public class InfoMethodicalAuthorization implements MethodicalAuthorization {
     private UserAccountInfo userAccountInfo;
 
-    @Override
-    public void checkAuthorization() {
-
-    }
 
     @Override
     public void checkLogin() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите ваш логин. Логин может содержать только латинские буквы, цифры и знак подчеркивания.\n"+
-                "Длина должна быть меньше 20 символов.");
-        String login = "[a-zA-Z0-9_]";
-        login = scanner.next();
-        int len1 = login.length();
-        if (len1 >= 20){
-            System.out.println("Ошибка! Максимальное количество символов 19!");
+        // Метод matches() — в Java сообщает, соответствует ли или нет данная строка заданному регулярному выражению.
+        System.out.println(MESSAGE_LOGIN);
+        // Метод matches() — в Java сообщает, соответствует ли или нет данная строка заданному регулярному выражению.
+        String login = scanner.next();
+        if (login.matches("\\w,{10,20}")) {
+            System.out.println("Ваш логин принят!");
+        } else { // если условие логина не выполняется
+            try { //попытайся
+                throw new WrongLoginException(); // выбрасываем исключение
+            } catch (WrongLoginException e) { // ловим искл. + выводим смс об ошибке
+                System.out.println(ERROR_MESSAGE);
+            }
         }
     }
 
     @Override
     public void checkupPassword() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите ваш пароль. Пороль должен содержать только латинские буквы, цифры и знак подчеркивания.\n" +
-                "Длина password должна быть меньше 20 символов");
-        String password = "[a-zA-Z0-9_]";
-        password = scanner.next();
-        int len2 = password.length();
-        if (len2 >= 20) {
-            System.out.println("Ошибка! Максимальное количество символов 19!");
-        }
-        String confirmPassword = null;
+        System.out.println(MESSAGE_PASSWORD);
+        String password = scanner.next();
+        if (password.matches("\\w,{10,20}")) {
+            System.out.println("Ваш пароль принят!");
+        } else {
             try {
-                if (confirmPassword == null)
-                    throw new WrongPasswordException ();
-                else (confirmPassword.equals(password)) {
-                    System.out.println("Все верно! Пароли совпадают");
-                } throw new  WrongPasswordException ("Пароли несовпадают!"){
-
-                } cSystem.out.println("Пароли совпадают Регистрация удалась");
-
+                throw new WrongPasswordException(); // выбрасываем исключение
+            } catch (WrongPasswordException e) { // ловим искл. + выводим смс об ошибке
+                System.out.println(ERROR_MESSAGE);
+            }
+        }
     }
 
-        public void checkpointPassword() {
-
+    @Override
+    public void checkpointPassword(String confirmPassword) {
+        if (userAccountInfo.getPassword() == confirmPassword) {
+            System.out.println(MESSAGE_REGISTRATION);
+        } else {
+            try {
+                throw new WrongPasswordException(); // выбрасываем исключение
+            } catch (WrongPasswordException e) { // ловим искл. + выводим смс об ошибке
+                System.out.println(ERROR_CONFIRM_PASSWORD_MESSAGE);
+            }
+        }
     }
 }
+
+
 //    boolean isStarted = true; // вводим перемунную при котором условие положильное (для того что бы выполнять операцию пока число не будет четное, т.е isStarted =true)
 //        while (isStarted) { // переменная = true,пока..
 //                try {

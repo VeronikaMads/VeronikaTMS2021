@@ -19,7 +19,7 @@ public class MainClass {
 //    Exception. Обработка исключений проводится внутри метода "checkAuthorization".
 //    Используем multi-catch block. Метод "checkAuthorization" возвращает true, если значения верны или false в другом случае.
 //    В методе main вызваем метод checkAuthorization и печатаем на консоль результат выполнения метода.
-        InfoMethodicalAuthorization infoMethodicalAuthorization = new  InfoMethodicalAuthorization();
+        InfoMethodicalAuthorization infoMethodicalAuthorization = new InfoMethodicalAuthorization();
         infoMethodicalAuthorization.checkLogin();
     }
 }
