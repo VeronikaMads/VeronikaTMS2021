@@ -1,10 +1,16 @@
 package p12;
 
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
+
+import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
+@Getter
+@Setter
 @ToString
 public class Main {
     public static void main(String[] args) {
@@ -56,6 +62,7 @@ public class Main {
                 if (str4.charAt(i) != str4.charAt(j)) {
                     isPalindrome = false;
                     System.out.println("Entered string is not a palindrome.");
+                    break;
                 }
                 i--;
                 j++;
@@ -85,34 +92,15 @@ public class Main {
 //          Если в предложении присутствует слово-палиндром, то не имеет значения какое количество слов в предложении, оно выводится
 //          на экран.
 
-        final String text = "Пробудилась земля от долгого зимнего сна.Заблестела молодая травка." +
+        final String text = "Пробудилась дед земля от долгого зимнего сна.Заблестела молодая травка." +
                 "Разлилась волна зелёного тумана по широкому лугу.Стоят тёплые и тихие вечера.Звенят луга." +
                 "По земле, по лугам, по оврагам плывёт звон.Что это звенит?Вот скатилась капля сладкого сока с берёзовой ветки.";
-//
-//        выводит количество предложений (хотела сдесь добавить фильтр и разбить на слова , но не поняла как)
-        String[] sentences = text.split("[\\.\\!\\?]");
-        Long count = Stream.of(sentences)
-                .collect(Collectors.counting());
-        System.out.println("В тексте " + count + " предложений");
-
-//        делит на предложения
-        String[] sentences1 = text.split("[\\.\\!\\?]");
-        for (String sentence : sentences) {
-            System.out.println(sentence);
-        }
-        System.out.println();
-
-//          Дожно делить на слова, но не делит. Почему????
-        String[] word = text.split("[\\.\\!\\?]");
-        for (String words : word) {
-            int length1 = text.split("[\\.\\!\\?]").length;
-            if (length1 >= 3 && length1 <= 5) {
-                System.out.println(words);
-            }
-        }
-//        // проверяет палиндром (пока проверка только на однло слово. что б искал в самом тексте не смогла сделать)
-        textFormatter.isPalindromes(text);
-
+        String[] sentences = text.split("[.!?]");
+        List<String> stringList = Stream.of(sentences)
+                .map(s -> getSentencesByCondition(s))
+                .filter(Objects::nonNull)
+                .collect(Collectors.toList());
+        System.out.println(stringList);
 
 //         * Пишем все в ООП стиле. Создаем класс TextFormatter
 //         * в котором два статических метода:
@@ -121,13 +109,34 @@ public class Main {
 //         * В main создаем строку с текстом, также можно текст задавать с консоли.
 //         * Разбиваем текст на предложения. Используя методы класса TextFormatter определяем подходит ли нам предложение.
 //         * Если подходит, то выводим на экран.
-//
+
         final String str8 = "Разбежавшись, прыгну со скалы. Вот я был, и вот меня не стало. И когда об этом вдруг узнаешь ты. Тогда поймёшь, кого ты потеряла";
+        String[] strings1 = str8.split(" ");
         textFormatter.checkLineCount(str8);
-        textFormatter.isPalindromes(str8);
+        textFormatter.isPalindrome(str8);
+
+    }
+    // соединяем в один метод
+    private static String getSentencesByCondition(String text) {
+        String[] strings = text.split(" ");
+        if (checkLength(strings) || checkPalindrome(strings)) {
+            return text;
+        }
+        return null;
+    }
+
+    // создаем метод проверки на палиндром
+    private static boolean checkPalindrome(String[] strings) {
+        return Stream.of(strings)
+                .filter(s1 -> s1.length() > 1)
+                .anyMatch(s -> new StringBuilder(s).reverse().toString().equals(s));
+    }
+
+    // создаем метод который возвращает t/f . Задаем длину
+    private static boolean checkLength(String[] strings) {
+        return strings.length >= 3 && strings.length <= 5;
     }
 }
-
 
 
 
