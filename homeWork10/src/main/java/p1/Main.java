@@ -4,6 +4,8 @@ import p3.Audi;
 import p3.Hyundai;
 import p3.Nissan;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         //  Домашка.
@@ -17,15 +19,20 @@ public class Main {
         //В main создаете парочку автомобилей и пытаетесь их завести.
         // И обрабатываете исключение которое может вылететь при старте автомобиля
 
-        Machine audi = new Audi("Audi C 50", 120,45000);
-        Machine hyundai = new Hyundai("Hyundai CсH 558", 125,55000);
-        Machine nissan = new Nissan("Nissan К484", 130,49000);
-        MethodsInformation methodsInformation = new MethodsInformation(audi);
-        MethodsInformation methodsInformation1 = new MethodsInformation(nissan);
-        MethodsInformation methodsInformation2 = new MethodsInformation(hyundai);
-        methodsInformation.start(audi);
-        methodsInformation.start(nissan);
-        methodsInformation.start(hyundai);
-
+        Machine audi = new Audi("Audi C 50", 120, 45000);
+        Machine hyundai = new Hyundai("Hyundai CсH 558", 125, 55000);
+        Machine nissan = new Nissan("Nissan К484", 130, 49000);
+        MethodsInformation methodsInformation = new MethodsInformation();
+        ArrayList<MachineMethods> machineList = new ArrayList<>();
+        machineList.add(nissan);
+        machineList.add(hyundai);
+        machineList.add(audi);
+        for (MachineMethods machine: machineList){
+            methodsInformation.start(nissan);
+            methodsInformation.start(hyundai);
+            methodsInformation.start(audi);
+        }
     }
 }
+
+
