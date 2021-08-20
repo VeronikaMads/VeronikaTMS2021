@@ -19,19 +19,20 @@ public class TextFormatter {
 
 //    * 2. Метод принимает строку и проверяет есть ли в строке слово-палиндром. Если есть возвращает true, если нет false
 
-    protected static boolean checkPalindrome(String[] strings1) {
-        return Stream.of(strings1)
-                .filter(s1 -> s1.length() > 1)
-                .anyMatch(s1 -> new StringBuilder(s1).reverse().toString().equals(s1));
+    private static boolean checkPalindrome(String str8) {
+        String[] sentences = str8.split("[.!?]");
+        return Stream.of(sentences)
+                .filter(s -> s.length() > 1)
+                .anyMatch(s -> new StringBuilder(s).reverse().toString().equalsIgnoreCase(s));
     }
 
-    public boolean isPalindrome(String text) {
-        String[] words = text.split(",\\s*");
-        StringBuilder sb =new  StringBuilder (text);
-        for (String word : words) {
-            if (word.length() > 1 && sb.reverse().equals(word)) {
-                return true;
-            }
+    public boolean isPalindromes(String str8) {
+        boolean result = false;
+        String[] strings = str8.split(" ");
+        if (checkPalindrome(str8)) {
+            result = true;
         }
-        return false;
-}}
+        return result;
+    }
+}
+

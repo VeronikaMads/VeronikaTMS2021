@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -92,7 +93,7 @@ public class Main {
 //          Если в предложении присутствует слово-палиндром, то не имеет значения какое количество слов в предложении, оно выводится
 //          на экран.
 
-        final String text = "Пробудилась дед земля от долгого зимнего сна.Заблестела молодая травка." +
+        final String text = "дед Пробудилась дед земля от долгого зимнего сна.Заблестела молодая травка." +
                 "Разлилась волна зелёного тумана по широкому лугу.Стоят тёплые и тихие вечера.Звенят луга." +
                 "По земле, по лугам, по оврагам плывёт звон.Что это звенит?Вот скатилась капля сладкого сока с берёзовой ветки.";
         String[] sentences = text.split("[.!?]");
@@ -110,11 +111,10 @@ public class Main {
 //         * Разбиваем текст на предложения. Используя методы класса TextFormatter определяем подходит ли нам предложение.
 //         * Если подходит, то выводим на экран.
 
-        final String str8 = "Разбежавшись, прыгну со скалы. Вот я был, и вот меня не стало. И когда об этом вдруг узнаешь ты. Тогда поймёшь, кого ты потеряла";
-        String[] strings1 = str8.split(" ");
+        final String str8 = " дед Разбежавшись, прыгну со скалы. Вот я был, и вот меня не стало. И когда об этом вдруг узнаешь ты. Тогда поймёшь, кого ты потеряла";
         textFormatter.checkLineCount(str8);
-        textFormatter.isPalindrome(str8);
-
+        textFormatter.isPalindromes(str8);
+        System.out.println("2");
     }
     // соединяем в один метод
     private static String getSentencesByCondition(String text) {
@@ -136,6 +136,8 @@ public class Main {
     private static boolean checkLength(String[] strings) {
         return strings.length >= 3 && strings.length <= 5;
     }
+
+
 }
 
 
