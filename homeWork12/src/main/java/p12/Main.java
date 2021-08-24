@@ -6,10 +6,10 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.List;
-import java.util.Locale;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 @Getter
 @Setter
 @ToString
@@ -113,9 +113,12 @@ public class Main {
 
         final String str8 = " дед Разбежавшись, прыгну со скалы. Вот я был, и вот меня не стало. И когда об этом вдруг узнаешь ты. Тогда поймёшь, кого ты потеряла";
         textFormatter.checkLineCount(str8);
-        textFormatter.isPalindromes(str8);
-        System.out.println("2");
+        System.out.println(textFormatter.isPalindromes(str8));
+        System.out.println(TextFormatter.getSentencesContainsPalindromes(str8));
+
+
     }
+
     // соединяем в один метод
     private static String getSentencesByCondition(String text) {
         String[] strings = text.split(" ");

@@ -3,8 +3,10 @@ package p12;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
 @Getter
 @Setter
 
@@ -19,20 +21,32 @@ public class TextFormatter {
 
 //    * 2. Метод принимает строку и проверяет есть ли в строке слово-палиндром. Если есть возвращает true, если нет false
 
-    private static boolean checkPalindrome(String str8) {
-        String[] sentences = str8.split("[.!?]");
-        return Stream.of(sentences)
+    // проверяет на наличие палиндрома
+    private static boolean checkPalindrome(String[] str) {
+        return Stream.of(str)
                 .filter(s -> s.length() > 1)
                 .anyMatch(s -> new StringBuilder(s).reverse().toString().equalsIgnoreCase(s));
     }
 
-    public boolean isPalindromes(String str8) {
+
+    //    возвращает true, если нет false
+    public boolean isPalindromes(String str) {
+        String[] strings = str.split("[.!?]"); // делит на предложения
         boolean result = false;
-        String[] strings = str8.split(" ");
-        if (checkPalindrome(str8)) {
+        if (checkPalindrome(str.split("[^А-Яа-я]"))) {
             result = true;
         }
         return result;
     }
+
+    //   Метод Разбивает текст на предложения. Используя методы класса TextFormatter определяем подходит ли нам предложение.
+//         * Если подходит, то выводим на экран.
+    public static List<String> getSentencesContainsPalindromes(String str) {
+        String[] sentences = str.split("[.!?]");//делим текст на предложения
+        return Stream.of(sentences)
+                .filter(s -> checkPalindrome(s.split("[^А-Яа-я]"))) //через сплит мы из предложения получаем массив слов(паттерн выбирает только русские символы и больше ничего)
+                .collect(Collectors.toList());
+    }
 }
+
 
