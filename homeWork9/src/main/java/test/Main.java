@@ -1,4 +1,4 @@
-package p14;
+package test;
 
 import Samsung.SamsungHand;
 import Samsung.SamsungHead;
