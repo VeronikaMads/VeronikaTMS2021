@@ -1,4 +1,4 @@
 package library;
 
-public class InfoServiceLibrary implements serviceLibrary{
+public class InfoServiceLibrary implements IServiceLibrary {
 }

@@ -5,6 +5,6 @@ import java.util.List;
 
 // - Library содержит список книг и список читателей.
 public class Library {
-    private List<Book> ListBooksLibrary = new ArrayList<Book>();
-    private ArrayList<Reader> ListReaderLibrary = new ArrayList<Reader>();
+    private List<Book> listBooksLibrary = new ArrayList<Book>();
+    private List<Reader> listReaderLibrary = new ArrayList<Reader>();
 }

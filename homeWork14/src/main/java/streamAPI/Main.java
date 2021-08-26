@@ -5,19 +5,20 @@ public class Main {
     public static void main(String[] args) {
 //     * Все задачи необходимо решать используя Stream API и выводить результат на консоль !!!
 //                * 1) Вывести список чисел, умноженных на 2. Список чисел задаем рандомно.
-        MethodsMain methodsMain = new MethodsMain();
+        ExampleStreamApiService methodsMain = new ExampleStreamApiService();
         methodsMain.getListOfNumbers();
 
 //      * 2) Определение количества четных чисел в потоке данных.
 //      * Создаем коллекцию Set<Integer> в которую добавляем рандомно 50 чисел от 0 до 100
-        methodsMain.checkEvenNumbers();
-
+        System.out.println(ExampleStreamApiService.checkEvenNumbers());
+        System.out.println(" *** ");
+        ExampleStreamApiService.checkEvenNumbers2();
 //      * 3) Вывести список имен, но с первой заглавной буквой. список имен: "john", "arya", "sansa"
         methodsMain.checkListNames();
 
 //      * 4) Создаем класс Car с полями number (номер авто) и year (год выпуска).
 //     * Необходимо вывести все не пустые номера машин, выпущенных после 2010 года
-        methodsMain.getCars(MethodsMain.getCarsList());
+        methodsMain.getCars(ExampleStreamApiService.getCarsList());
 
 
 //     * 5) Задан список сотрудников, которые хранятся в коллекции List<Person>.
@@ -25,7 +26,7 @@ public class Main {
 //     *  a) написать метод, который отображает все фамилии, начинающиеся на букву "Д".
 //     *  Внимание! метод должен вернуть объект Optional<String>.
 
-        methodsMain.getPersons(MethodsMain.getPersonsList());
+        methodsMain.getPersonsByParams(ExampleStreamApiService.PersonList(),"W");
 
 //     *  b*)Со звездочкой. Написать метод, который будет выводить в столбик первую букву фамилии и рядом количество сотрудников,
 //     *  у которых фамилия начинается с этой буквы.
