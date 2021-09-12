@@ -1,12 +1,8 @@
 package streamAPI;
-
 import org.apache.commons.lang3.StringUtils;
-
 import java.util.*;
 import java.util.stream.Collectors;
-
 import static java.util.List.of;
-import static java.util.stream.Collectors.groupingBy;
 
 public class ExampleStreamApiService {
     Person person;
@@ -32,7 +28,6 @@ public class ExampleStreamApiService {
             System.out.println("Созданный рандомно список: " + randomList);
         }
     }
-
 
     public static List<Integer> checkEvenNumbers() {
         ArrayList<Integer> integers = new ArrayList<Integer>();
@@ -97,6 +92,7 @@ public class ExampleStreamApiService {
                 .filter(StringUtils::isNotBlank)
                 .forEach(System.out::println);
     }
+
     //  последний пункт "вернуть объект Optional<String>"
     public void getPersonsByParams2(List<Person> personList, String param) {
         Optional.of(personList.stream()
