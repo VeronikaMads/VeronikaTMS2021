@@ -1,27 +1,41 @@
 package library;
 
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 //* Для читателя библиотеки будем хранить ФИО и электронный адрес. Каждый читатель может взять в библиотеке одну или несколько книг.
 @Getter
-@ToString
-public class Reader {
-    private String surname;
-    private String name;
-    private String patronymic; // отчество
-    private String email;
-    private String acceptance; //флаг согласия на рассылку
-    private ArrayList<Book> Readable = new ArrayList<Book>();
+@Setter
 
-    public Reader(String surname, String name, String patronymic, String email, String acceptance) {
-        this.surname = surname;
-        this.name = name;
-        this.patronymic = patronymic;
+public class Reader {
+    private String fio; //ФИО
+    private String email; // электронный адрес
+    private boolean acceptance; //флаг согласия на рассылку
+    private List<Book> books; //взятые книги
+
+    public Reader(String fio, String email, boolean acceptance) {
+        this.fio = fio;
         this.email = email;
         this.acceptance = acceptance;
+        this.books = books;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Reader reader = (Reader) o;
+        return fio.equals(reader.fio);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fio);
+    }
 }
