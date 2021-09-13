@@ -13,5 +13,5 @@ import lombok.ToString;
 public class Book {
     private String author;
     private String title;
-    private int yearOfPublishing;
+    private Integer yearOfPublishing;
 }
